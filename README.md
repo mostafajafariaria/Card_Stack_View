@@ -31,15 +31,15 @@ dependencies {
   
   <com.fcesteghlal.cardstackview.CardStackView
   
-            android:id="@+id/stackView"
+   android:id="@+id/stackView"
             
-            style="@style/cardStackStyle"
+   style="@style/cardStackStyle"
             
-            android:layout_width="match_parent"
+   android:layout_width="match_parent"
             
-            android:layout_height="match_parent"
+   android:layout_height="match_parent"
             
-            />
+   />
   
   sample this project :
   
@@ -63,7 +63,7 @@ dependencies {
     
    sample code this activity : 
     
-    List<Object> objects = new ArrayList<>();
+   List<Object> objects = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             objects.add(new Object());
         }
@@ -73,7 +73,7 @@ dependencies {
         cardStackView.setAdapter(adapter);
        
    # Image
-        
-       https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.PNG
+   ![card_stack_view](https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.PNG)
+       
         
        
