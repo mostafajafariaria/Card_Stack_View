@@ -74,6 +74,6 @@ dependencies {
         
         ## Image
         
-        ![card stack view](https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.PNG)
+       https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.PNG
         
        
