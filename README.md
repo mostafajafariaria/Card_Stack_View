@@ -30,10 +30,15 @@ dependencies {
   code in xml
   
   <com.fcesteghlal.cardstackview.CardStackView
+  
             android:id="@+id/stackView"
+            
             style="@style/cardStackStyle"
+            
             android:layout_width="match_parent"
+            
             android:layout_height="match_parent"
+            
             />
   
   sample this project :
