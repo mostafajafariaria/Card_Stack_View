@@ -58,12 +58,19 @@ dependencies {
    sample code this activity : 
     
    List<Object> objects = new ArrayList<>();
+ 
         for (int i = 0; i < 6; i++) {
+        
             objects.add(new Object());
+            
         }
+        
         StackViewAdapter adapter;
+        
         CardStackView cardStackView = findViewById(R.id.stackView);
+        
         adapter = new StackViewAdapter(this, objects);
+        
         cardStackView.setAdapter(adapter);
        
    # Image
