@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rlBankInfo"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_row_card_bank">
+
+        <RelativeLayout
+            android:id="@+id/rlNumberCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivBankLogo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:tint="@color/background"
+                app:srcCompat="@drawable/ic_credit_card_black_24dp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvNumberBankCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ivBankLogo"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="6273    6974     2452     5373"
+                android:textColor="@color/onPrimary"
+                android:textSize="21sp"
+                android:textStyle="normal"
+                app:autoSizeTextType="uniform" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivHighlight"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:alpha=".1"
+            android:scaleType="centerCrop"
+            android:tint="@color/background"
+            app:srcCompat="@drawable/ic_credit_card_black_24dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvTitleActBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlNumberCard"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:text="increase value as credit card"
+            android:textColor="@color/onPrimary"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

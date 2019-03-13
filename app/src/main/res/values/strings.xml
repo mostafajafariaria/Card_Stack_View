@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CardStack</string>
+    <string name="transfer_title">transaction</string>
+    <string name="unit_amount">UNIT AMOUNT</string>
+    <string name="_continue">Continue</string>
+    <string name="add_new_card">ADD NEW CARD</string>
+</resources>

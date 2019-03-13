@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StackView">
+        <attr name="maxViews" format="integer|reference" />
+        <attr name="viewsMarginTop" format="dimension|reference" />
+        <attr name="viewsMarginLeftRight" format="dimension|reference" />
+        <attr name="viewAnimDuration" format="integer|reference" />
+        <attr name="expandable" format="boolean|reference" />
+        <attr name="firstAlpha" format="float|reference" />
+        <attr name="viewAlpha" format="boolean|reference" />
+        <attr name="stepAlpha" format="float|reference" />
+
+    </declare-styleable>
+
+</resources>

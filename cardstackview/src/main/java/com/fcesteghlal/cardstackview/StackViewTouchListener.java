@@ -1,0 +1,128 @@
+package com.fcesteghlal.cardstackview;
+
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+
+public class StackViewTouchListener {
+    private static final int NO_VIEW = -1;
+    private static final int SNAP_VELOCITY = 5000;
+    private static final int VELOCITY_UNITS = 1000;
+    private static final int INITIAL_POSITION = 0;
+    private static final int INITIAL_OFFSET = 0;
+    private static final int MINIMUM_OFFSET_TO_TRIGGER_MOVEMENT_IN_PX = 20;
+    private int accumulatedOffsetX = INITIAL_OFFSET;
+    private int accumulatedOffsetY = INITIAL_OFFSET;
+    private int initialPositionX = INITIAL_POSITION;
+    private int initialPositionY = INITIAL_POSITION;
+    private final CardStackView ownerView;
+    private MotionType motionType = MotionType.UNKNOWN;
+    private VelocityTracker velocityTracker;
+    private int currentItemView = NO_VIEW;
+
+    enum MotionType {
+        UNKNOWN,
+        HORIZONTAL,
+        VERTICAL
+    }
+
+    StackViewTouchListener(CardStackView ownerView) {
+        this.ownerView = ownerView;
+    }
+
+    boolean onTouchEvent(MotionEvent event) {
+        boolean result = false;
+        int motionAction = event.getAction();
+        switch (motionAction) {
+            case MotionEvent.ACTION_DOWN:
+                if (velocityTracker == null) {
+                    velocityTracker = VelocityTracker.obtain();
+                } else {
+                    velocityTracker.clear();
+                }
+                velocityTracker.addMovement(event);
+                initialPositionX = (int)event.getX();
+                initialPositionY = (int)event.getY();
+                currentItemView = ownerView
+                        .findViewIndexByPosition(initialPositionX, initialPositionY);
+                result = true;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                velocityTracker.addMovement(event);
+                velocityTracker.computeCurrentVelocity(VELOCITY_UNITS);
+                float xVelocity = velocityTracker.getXVelocity();
+                float yVelocity = velocityTracker.getYVelocity();
+                if (Math.abs(xVelocity) >= SNAP_VELOCITY) {
+                    ownerView.performHorizontalSwipe();
+                } else if (Math.abs(yVelocity) >= SNAP_VELOCITY) {
+                    if ((yVelocity > 0 && !ownerView.isExpanded()) ||
+                            (yVelocity < 0 && ownerView.isExpanded())) {
+                        ownerView.performVerticalSwipe();
+                    }
+                }
+                int currentPositionX = (int)event.getX();
+                int currentPositionY = (int)event.getY();
+                int currentHorizontalOffset = currentPositionX - initialPositionX;
+                int currentVerticalOffset = currentPositionY - initialPositionY;
+                if (checkMinimumMovementTrigger(currentHorizontalOffset, currentVerticalOffset)) {
+                    accumulatedOffsetX += currentHorizontalOffset;
+                    accumulatedOffsetY += currentVerticalOffset;
+                    if (motionType == MotionType.UNKNOWN) {
+                        motionType = getMotionType();
+                    }
+                    applyOffsets(accumulatedOffsetX, accumulatedOffsetY);
+                    initialPositionX = (int)event.getX();
+                    initialPositionY = (int)event.getY();
+                }
+                break;
+            case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_UP:
+                if (velocityTracker != null) {
+                    velocityTracker.recycle();
+                    velocityTracker = null;
+                }
+                initialPositionX = INITIAL_POSITION;
+                initialPositionY = INITIAL_POSITION;
+                accumulatedOffsetX = INITIAL_OFFSET;
+                accumulatedOffsetY = INITIAL_OFFSET;
+                motionType = MotionType.UNKNOWN;
+                ownerView.performReleaseTouch();
+                break;
+        }
+        return result;
+    }
+
+    private void applyOffsets(int horizontalOffset, int verticalOffset) {
+        if (motionType == MotionType.HORIZONTAL) {
+            applyHorizontalMotion(horizontalOffset);
+        } else if (motionType == MotionType.VERTICAL) {
+            if (ownerView.isExpandable()) {
+                applyVerticalMotion(verticalOffset);
+            }
+        }
+    }
+
+    private MotionType getMotionType() {
+        MotionType result = MotionType.HORIZONTAL;
+        if (Math.abs(accumulatedOffsetY) > Math.abs(accumulatedOffsetX)) {
+            result = MotionType.VERTICAL;
+        }
+        return result;
+    }
+
+    private boolean checkMinimumMovementTrigger(int currentHorizontalOffset, int currentVerticalOffset) {
+        return Math.abs(currentHorizontalOffset) >= MINIMUM_OFFSET_TO_TRIGGER_MOVEMENT_IN_PX ||
+                Math.abs(currentVerticalOffset) >= MINIMUM_OFFSET_TO_TRIGGER_MOVEMENT_IN_PX ||
+                Math.abs(accumulatedOffsetX) >= MINIMUM_OFFSET_TO_TRIGGER_MOVEMENT_IN_PX ||
+                Math.abs(accumulatedOffsetY) >= MINIMUM_OFFSET_TO_TRIGGER_MOVEMENT_IN_PX;
+    }
+
+    private void applyHorizontalMotion(int offset) {
+        if (currentItemView != NO_VIEW) {
+            ownerView.setOffsetLeftRight(currentItemView, offset);
+        }
+    }
+
+    private void applyVerticalMotion(int offset) {
+        ownerView.setOffsetTopBottom(offset);
+    }
+}
