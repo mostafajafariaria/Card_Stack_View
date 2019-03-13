@@ -59,9 +59,9 @@ dependencies {
     
    List<Object> objects = new ArrayList<>()
  
-   for (int i = 0; i < 6; i++)
+   for (int i = 0; i < 6 i++)
    {
-    objects.add(new Object());  
+    objects.add(new Object())
    }
              
    StackViewAdapter adapter
