@@ -44,13 +44,21 @@ dependencies {
   sample this project :
   
   <style name="cardStackStyle">
+ 
         <item name="viewsMarginTop">48dp</item>
+        
         <item name="viewAlpha">true</item>
+        
         <item name="maxViews">4</item>
+        
         <item name="firstAlpha">1</item>
+        
         <item name="stepAlpha">0.07</item>
+        
         <item name="viewsMarginLeftRight">60dp</item>
+        
         <item name="viewAnimDuration">200</item>
+        
     </style>
     
    sample code this activity : 
@@ -66,6 +74,6 @@ dependencies {
         
         ## Image
         
-        ![image](https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.PNG)
+        ![card stack view](https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.png)
         
        
