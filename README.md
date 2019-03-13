@@ -55,9 +55,10 @@ dependencies {
         
    </style>
     
-   sample code this activity : 
-    
-   List<Object> objects = new ArrayList<>();
+  
+ sample code this activity : 
+  
+      List<Object> objects = new ArrayList<>();
  
         for (int i = 0; i < 6; i++) {
         
