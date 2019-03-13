@@ -45,21 +45,21 @@ dependencies {
   
   <style name="cardStackStyle">
  
-        <item name="viewsMarginTop">48dp</item>
+   <item name="viewsMarginTop">48dp</item>
         
-        <item name="viewAlpha">true</item>
+   <item name="viewAlpha">true</item>
         
-        <item name="maxViews">4</item>
+   <item name="maxViews">4</item>
         
-        <item name="firstAlpha">1</item>
+   <item name="firstAlpha">1</item>
         
-        <item name="stepAlpha">0.07</item>
+   <item name="stepAlpha">0.07</item>
         
-        <item name="viewsMarginLeftRight">60dp</item>
+   <item name="viewsMarginLeftRight">60dp</item>
         
-        <item name="viewAnimDuration">200</item>
+   <item name="viewAnimDuration">200</item>
         
-    </style>
+   </style>
     
    sample code this activity : 
     
@@ -71,8 +71,8 @@ dependencies {
         CardStackView cardStackView = findViewById(R.id.stackView);
         adapter = new StackViewAdapter(this, objects);
         cardStackView.setAdapter(adapter);
-        
-        ## Image
+       
+   # Image
         
        https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.PNG
         
