@@ -57,17 +57,14 @@ dependencies {
     
    sample code this activity : 
     
-   List<Object> objects = new ArrayList<>()
- 
-   for (int i = 0; i < 6 i++)
-   {
-    objects.add(new Object())
-   }
-             
-   StackViewAdapter adapter
-   CardStackView cardStackView = findViewById(R.id.stackView)
-   adapter = new StackViewAdapter(this, objects)
-   cardStackView.setAdapter(adapter)
+   List<Object> objects = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            objects.add(new Object());
+        }
+        StackViewAdapter adapter;
+        CardStackView cardStackView = findViewById(R.id.stackView);
+        adapter = new StackViewAdapter(this, objects);
+        cardStackView.setAdapter(adapter);
        
    # Image
    ![card_stack_view](https://github.com/mostafajafariaria/Card_Stack_View/blob/master/cardStack.PNG)
