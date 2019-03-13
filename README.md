@@ -43,20 +43,17 @@ dependencies {
   
   sample this project :
   
-  ##<style name="cardStackStyle">
- 
-   name="viewsMarginTop" 48dp      
-   name="viewAlpha" true      
-   name="maxViews" 4     
-   name="firstAlpha"1   
-   name="stepAlpha" 0.07
-   name="viewsMarginLeftRight" 60dp 
-   name="viewAnimDuration">200 
-        
-   </style>
-    
-  
- sample code this activity : 
+     <style name="cardStackStyle">
+          <item name="viewsMarginTop">48dp</item>
+          <item name="viewAlpha">true</item>
+          <item name="maxViews">4</item>
+          <item name="firstAlpha">1</item>
+          <item name="stepAlpha">0.07</item>
+          <item name="viewsMarginLeftRight">60dp</item>
+          <item name="viewAnimDuration">200</item>
+    </style>
+      
+  sample code this activity : 
   
       List<Object> objects = new ArrayList<>();
  
