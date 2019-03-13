@@ -4,9 +4,17 @@ CardStackView is a android library simillar stack view in android widget.You  wi
 ## How to use dependency in your project
 
 allprojects {
+
  repositories {
-  maven { url 'https://jitpack.io' }
+ 
+  maven { 
+  
+  url 'https://jitpack.io'
+  
+  }
+  
      }
+     
  }
  
 Add library the dependency:
