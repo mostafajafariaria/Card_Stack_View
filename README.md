@@ -13,7 +13,7 @@ CardStackView is a android library simillar stack view in android widget.You  wi
       }
     }
    
- Add library the dependency:
+## Add library the dependency:
 
     dependencies {
     
@@ -22,6 +22,8 @@ CardStackView is a android library simillar stack view in android widget.You  wi
   
   # Usage
   
+  ## sample this project 
+  
    code in xml :
   
     <com.fcesteghlal.cardstackview.CardStackView
@@ -29,10 +31,8 @@ CardStackView is a android library simillar stack view in android widget.You  wi
       style="@style/cardStackStyle"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-    />
-   
-  sample this project :
-  
+    /> 
+    
      <style name="cardStackStyle">
           <item name="viewsMarginTop">48dp</item>
           <item name="viewAlpha">true</item>
