@@ -25,22 +25,18 @@ dependencies {
   implementation 'com.github.mostafajafariaria:Card_Stack_View:V1.0'
     
   }
-  # Usage
   
-  code in xml :
+   # Usage
   
-  <com.fcesteghlal.cardstackview.CardStackView
+   code in xml :
   
-   android:id="@+id/stackView"
-            
-   style="@style/cardStackStyle"
-            
-   android:layout_width="match_parent"
-            
-   android:layout_height="match_parent"
-            
-   />
-  
+    <com.fcesteghlal.cardstackview.CardStackView
+      android:id="@+id/stackView"
+      style="@style/cardStackStyle"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+    />
+   
   sample this project :
   
      <style name="cardStackStyle">
