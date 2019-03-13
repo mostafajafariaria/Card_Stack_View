@@ -9,20 +9,18 @@ CardStackView is a android library simillar stack view in android widget.You  wi
       maven { 
        url 'https://jitpack.io'
         
-       }
-     }
-   }
+        }
+      }
+    }
    
  Add library the dependency:
 
-
     dependencies {
-   
-      implementation 'com.github.mostafajafariaria:Card_Stack_View:V1.0'
     
+      implementation 'com.github.mostafajafariaria:Card_Stack_View:V1.0'
     }
   
-   # Usage
+  # Usage
   
    code in xml :
   
