@@ -42,23 +42,17 @@ CardStackView is a android library simillar stack view in android widget.You  wi
           <item name="viewsMarginLeftRight">60dp</item>
           <item name="viewAnimDuration">200</item>
     </style>
-      
-  sample code this activity : 
+    
+   sample code this activity : 
   
       List<Object> objects = new ArrayList<>();
  
         for (int i = 0; i < 6; i++) {
-        
             objects.add(new Object());
-            
         }
-        
         StackViewAdapter adapter;
-        
         CardStackView cardStackView = findViewById(R.id.stackView);
-        
         adapter = new StackViewAdapter(this, objects);
-        
         cardStackView.setAdapter(adapter);
        
    # Image
