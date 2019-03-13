@@ -27,7 +27,7 @@ dependencies {
   }
   # Usage
   
-  code in xml
+  code in xml :
   
   <com.fcesteghlal.cardstackview.CardStackView
   
@@ -43,7 +43,7 @@ dependencies {
   
   sample this project :
   
-  <style name="cardStackStyle">
+  ##<style name="cardStackStyle">
  
    name="viewsMarginTop" 48dp      
    name="viewAlpha" true      
@@ -59,9 +59,10 @@ dependencies {
     
    List<Object> objects = new ArrayList<>()
  
-   for (int i = 0; i < 6; i++) {
-             objects.add(new Object());
-             }
+   for (int i = 0; i < 6; i++)
+   {
+    objects.add(new Object());  
+   }
              
    StackViewAdapter adapter
    CardStackView cardStackView = findViewById(R.id.stackView)
